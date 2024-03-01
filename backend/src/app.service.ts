@@ -12,11 +12,11 @@ export class AppService {
 
     for (const image of images) {
       const timestamp = new Date().toISOString().replace(/[-:.]/g, '');
-      const imagePath = `/images/${timestamp}_${image.originalname}`;
+      const imagePath = `images/${timestamp}_${image.originalname}`;
 
       savedImages.push(imagePath);
 
-      await fs.writeFile(`${__dirname}/../uploads${imagePath}`, image.buffer);
+      await fs.writeFile(`${__dirname}/../uploads/${imagePath}`, image.buffer);
     }
 
     const user = await this.prismaService.user.findUnique({
