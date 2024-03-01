@@ -8,7 +8,7 @@ async function bootstrap() {
   app.enableCors({
     origin: "*"
   });
-  app.useStaticAssets(join(__dirname, '../src/images/'));
+  app.useStaticAssets(join(__dirname, '..', '/uploads/'));
   await app.listen(3000);
 }
 bootstrap();

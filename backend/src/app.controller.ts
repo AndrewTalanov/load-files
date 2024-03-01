@@ -9,8 +9,8 @@ export class AppController {
   @Post('loadImage')
   @UseInterceptors(FilesInterceptor('images'))
   async loadImage(
-    @UploadedFiles() images,
-    @Body('user-id') userId
+    @UploadedFiles() images: any,
+    @Body('user-id') userId: string
   ) {
     return this.appService.loadImages(images, userId)
   }
